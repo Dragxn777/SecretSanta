@@ -73,7 +73,7 @@ export function ParticipantInput({
           className="button text-green-800 font-black"
           onClick={addParticipant}
         >
-          Ajouter
+          Ajouter un participant
         </button>
       </div>
       <ul className="space-y-2 ">
