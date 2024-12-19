@@ -1,0 +1,31 @@
+/* snowfall.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.snowflake {
+  position: absolute;
+  top: -10px;
+  z-index: 9999;
+  color: #fff;
+  font-size: 20px;
+  user-select: none;
+  pointer-events: none;
+  opacity: 0.1;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  animation: snow 10s linear infinite;
+}
+
+/* Animation de la neige, tombant de haut en bas avec rotation */
+@keyframes snow {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}

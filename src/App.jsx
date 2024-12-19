@@ -2,6 +2,7 @@ import { useState } from "react";
 import { WelcomeScreen } from "./components/WelcomeScreen";
 import { ParticipantInput } from "./components/ParticipantInput";
 import { AssignmentDisplay } from "./components/AssignmentDisplay";
+import "./fonts/Christmas.otf";
 
 export default function App() {
   // Tableau des participants
@@ -51,14 +52,17 @@ export default function App() {
   };
 
   return (
-    <div className="container mx-auto p-4">
-      <div>
+    <div className="bg-[url('/bg-home.jpg')] h-screen bg-cover flex items-center flex-col pt-5 gap-10 overflow-x-hidden">
+      <div className="">
         {currentScreen === "welcome" && (
           <WelcomeScreen onStart={() => setCurrentScreen("input")} />
         )}
         {currentScreen === "input" && (
           <>
-            <h2 className="text-2xl font-bold mb-6 text-center">
+            <h2
+              className="text-4xl text-white font-bold my-12 text-center"
+              id="title"
+            >
               Ajoutez les participants
             </h2>
             <ParticipantInput
@@ -66,8 +70,12 @@ export default function App() {
               participants={participants}
               onRemoveParticipant={removeParticipant}
             />
-            <div className="mt-6">
-              <button className="button w-full" onClick={distributeGifts}>
+            <div className="mt-6 flex items-center">
+              <button
+                className="button text-white w-full gap-1.5 flex bg-green-800 rounded-3xl p-5 my-5 text-2xl hover:cursor-pointer"
+                onClick={distributeGifts}
+              >
+                <img src="santa.png" alt="" className="w-8 h-8 items-center" />
                 Distribuer les cadeaux
               </button>
             </div>
