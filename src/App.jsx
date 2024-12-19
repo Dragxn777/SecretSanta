@@ -83,14 +83,21 @@ export default function App() {
         )}
         {currentScreen === "assignments" && (
           <>
-            <h2 className="text-2xl font-bold mb-6 text-center">
+            <h2
+              className="text-5xl text-white font-bold my-12 text-center"
+              id="title"
+            >
               Attributions des cadeaux
             </h2>
             <AssignmentDisplay assignments={assignments} />
-            <div className="mt-6">
-              <button className="button w-full" onClick={resetApp}>
+            <div className="mt-6 flex flex-col justify-center items-center">
+              <button
+                className="button text-center text-white w-auto gap-1.5 flex justify-center bg-green-800 rounded-3xl p-5 my-10 text-xl hover:cursor-pointer"
+                onClick={resetApp}
+              >
                 Recommencer
               </button>
+              <img src="santa.png" alt="" className="w-64 h-64" />{" "}
             </div>
           </>
         )}
